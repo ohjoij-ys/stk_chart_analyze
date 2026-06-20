@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  streamlit:
+    build: .
+    container_name: stk_chart_analyze
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - streamlit-net
+
+networks:
+  streamlit-net:
+    driver: bridge
