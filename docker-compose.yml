@@ -2,13 +2,13 @@ version: "3.9"
 
 services:
   stk_chart_analyze:
-    build: .
+    build:
+      context: .            # 关键点：. 指的就是 yml 所在目录
+      dockerfile: Dockerfile
     container_name: stk_chart_analyze
     restart: unless-stopped
     ports:
       - "8501:8501"
-    volumes:
-      - ./data:/app/data
     environment:
       - TZ=Asia/Shanghai
     networks:
