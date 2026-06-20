@@ -333,11 +333,11 @@ def download_stock_statements_disk(stock_name,stock_code,file_path=DATA_DIR):
             # 构建完整的文件路径
             filepath = stock_dir / report_info['filename']
             
-            # 如果文件已存在，跳过下载
-            if filepath.exists():
-                st.info(f"{report_info['name']} 已存在，跳过下载")
-                downloaded_files.append(str(filepath))
-                continue
+            # # 如果文件已存在，跳过下载
+            # if filepath.exists():
+            #     st.info(f"{report_info['name']} 已存在，跳过下载")
+            #     downloaded_files.append(str(filepath))
+            #     continue
             
             # 构建下载URL
             url = f"https://basic.10jqka.com.cn/api/stock/export.php"
