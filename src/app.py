@@ -89,7 +89,7 @@ def main():
                 selected_stock_name = select_name
                 selected_code = selected_index.split('(')[-1].rstrip(')')
             st.subheader("财务报表下载")
-            if st.sidebar.button("获取并下载财务报表", type="primary"):
+            if st.sidebar.button("下载或更新财务报表", type="primary"):
                 #将选择的股票代码传递给数据加载函数，并下载数据
                 download_stock_statements_disk(stock_name=select_name, stock_code=selected_code)
                 download_equity_change_table(stock_name=select_name,stock_code=selected_code)
